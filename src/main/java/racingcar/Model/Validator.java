@@ -13,7 +13,8 @@ public class Validator {
 
     public static void validateTryCount(String tryCount) {
         try {
-            Integer.parseInt(tryCount);
+            int count = Integer.parseInt(tryCount);
+            if(count < 1) throw new IllegalArgumentException("입력값이 자연수가 아닙니다");
         } catch (NumberFormatException e) {
             throw new IllegalArgumentException("입력값이 정수가 아닙니다");
         }
