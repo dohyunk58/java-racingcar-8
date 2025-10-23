@@ -2,6 +2,7 @@ package racingcar.Model;
 
 import java.util.ArrayList;
 import java.util.List;
+import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class RacingGame {
     private final List<Car> carList;
@@ -28,5 +29,12 @@ public class RacingGame {
             maxPosition = Math.max(maxPosition, car.getPosition());
         }
         return maxPosition;
+    }
+
+    public void runOneRound() {
+        for(Car car : carList) {
+            int randomNumber = pickNumberInRange(0,9);
+            car.move(randomNumber);
+        }
     }
 }
