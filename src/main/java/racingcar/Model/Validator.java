@@ -10,4 +10,12 @@ public class Validator {
 
         if(name.length() > MAX_NAME_LENGTH) throw new IllegalArgumentException("이름은 5자 이하만 가능합니다");
     }
+
+    public static void validateTryCount(String tryCount) {
+        try {
+            Integer.parseInt(tryCount);
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("입력값이 정수가 아닙니다");
+        }
+    }
 }

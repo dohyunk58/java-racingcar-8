@@ -38,4 +38,11 @@ public class ValidatorTest {
     void validateNameSuccess() {
         assertDoesNotThrow(() -> Validator.validateName("pobi"));
     }
+
+    @DisplayName("시도할 횟수가 숫자가 아니면 예외가 발생한다")
+    @Test
+    void validateTryCountIsNotNumber() {
+        assertThatThrownBy(() -> Validator.validateTryCount("1.1"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
 }
