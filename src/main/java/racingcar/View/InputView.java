@@ -7,11 +7,7 @@ import static camp.nextstep.edu.missionutils.Console.readLine;
 public class InputView {
     public static String readCarNames() {
         System.out.println("경주할 자동차 이름을 입력하세요.(이름은 쉼표(,) 기준으로 구분)");
-
-        String inputName = readLine();
-        Validator.validateName(inputName);
-
-        return inputName;
+        return readLine();
     }
 
     public static String readTryCount() {

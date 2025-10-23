@@ -37,4 +37,8 @@ public class RacingGame {
             car.move(randomNumber);
         }
     }
+
+    public List<Car> getCarList() {
+        return carList;
+    }
 }

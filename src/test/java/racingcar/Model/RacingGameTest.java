@@ -46,4 +46,19 @@ public class RacingGameTest {
 
         assertThat(winners).containsExactlyInAnyOrder("pobi", "woni");
     }
+
+    @DisplayName("현재 자동차 목록을 반환한다")
+    @Test
+    void getCarsList() {
+        Car car1 = new Car("pobi");
+        Car car2 = new Car("woni");
+        Car car3 = new Car("jun");
+
+        List<Car> carList = List.of(car1, car2, car3);
+        RacingGame game = new RacingGame(carList);
+
+        List<Car> result = game.getCarList();
+
+        assertThat(result).isEqualTo(carList);
+    }
 }
