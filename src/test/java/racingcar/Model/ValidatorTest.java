@@ -39,9 +39,16 @@ public class ValidatorTest {
         assertDoesNotThrow(() -> Validator.validateName("pobi"));
     }
 
-    @DisplayName("시도할 횟수가 숫자가 아니면 예외가 발생한다")
+    @DisplayName("시도할 횟수가 문자면 예외가 발생한다")
     @Test
     void validateTryCountIsNotNumber() {
+        assertThatThrownBy(() -> Validator.validateTryCount("a"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("시도할 횟수가 정수가 아니면 예외가 발생한다")
+    @Test
+    void validateTryCountIsNotInteger() {
         assertThatThrownBy(() -> Validator.validateTryCount("1.1"))
                 .isInstanceOf(IllegalArgumentException.class);
     }
