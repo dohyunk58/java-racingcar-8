@@ -18,4 +18,10 @@ public class Car {
     public String getName() {
         return this.name;
     }
+
+    public void move(int randomNumber) {
+        if(randomNumber >= MIN_INCREASE_CONDITION ) {
+            this.position += INCREASE_POSITION;
+        }
+    }
 }
