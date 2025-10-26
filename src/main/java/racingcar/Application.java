@@ -1,10 +1,10 @@
 package racingcar;
 
-import racingcar.Model.Car;
-import racingcar.Model.CarFactory;
-import racingcar.Model.RacingGame;
-import racingcar.View.InputView;
-import racingcar.View.OutputView;
+import racingcar.model.Car;
+import racingcar.model.CarFactory;
+import racingcar.model.RacingGame;
+import racingcar.view.InputView;
+import racingcar.view.OutputView;
 
 import java.util.List;
 

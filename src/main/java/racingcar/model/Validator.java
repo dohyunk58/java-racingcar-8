@@ -1,4 +1,4 @@
-package racingcar.Model;
+package racingcar.model;
 
 public class Validator {
     private static final int MAX_NAME_LENGTH = 5;

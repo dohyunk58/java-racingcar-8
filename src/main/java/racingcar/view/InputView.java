@@ -1,6 +1,6 @@
-package racingcar.View;
+package racingcar.view;
 
-import racingcar.Model.Validator;
+import racingcar.model.Validator;
 
 import static camp.nextstep.edu.missionutils.Console.readLine;
 
