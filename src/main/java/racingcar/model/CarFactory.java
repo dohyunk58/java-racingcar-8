@@ -6,12 +6,12 @@ import java.util.List;
 public class CarFactory {
     private static final String DELIMITER = ",";
 
-    public static List<Car> createCarList(String carNameInput) {
+    public List<Car> createCarList(String carNameInput) {
         String[] names = carNameInput.split(DELIMITER);
         List<Car> carList = new ArrayList<>();
 
         for (String name : names) {
-            carList.add(new Car(name.trim()));
+            carList.add(new Car(name));
         }
         return carList;
     }
