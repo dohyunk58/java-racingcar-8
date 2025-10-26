@@ -6,6 +6,7 @@ import static camp.nextstep.edu.missionutils.Randoms.pickNumberInRange;
 
 public class RacingGame {
     private final List<Car> carList;
+    private static final int MIN_INCREASE_CONDITION = 4;
 
     public RacingGame(List<Car> carList) {
         this.carList = carList;
@@ -34,7 +35,7 @@ public class RacingGame {
     public void runOneRound() {
         for(Car car : carList) {
             int randomNumber = pickNumberInRange(0,9);
-            car.move(randomNumber);
+            if(randomNumber >= MIN_INCREASE_CONDITION) car.move();
         }
     }
 

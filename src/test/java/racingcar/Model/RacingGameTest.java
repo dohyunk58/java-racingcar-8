@@ -16,11 +16,10 @@ public class RacingGameTest {
         Car car2 = new Car("woni");
         Car car3 = new Car("jun");
 
-        // 객체 전진, car1: 2, car2: 1, car3: 0
-        car1.move(4);
-        car1.move(9);
-        car2.move(4);
-        car2.move(3);
+        // [position] car1: 2, car2: 1, car3: 0
+        car1.move();
+        car1.move();
+        car2.move();
 
         RacingGame game = new RacingGame(List.of(car1,car2,car3));
 
@@ -36,9 +35,9 @@ public class RacingGameTest {
         Car car2 = new Car("woni");
         Car car3 = new Car("jun");
 
-        car1.move(4);
-        car2.move(4);
-        car2.move(3);
+        // [positon] car1: 1, car2: 1, car3: 0
+        car1.move();
+        car2.move();
 
         RacingGame game = new RacingGame(List.of(car1, car2, car3));
 

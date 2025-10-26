@@ -38,19 +38,11 @@ public class CarTest {
         assertThat(car.getPosition()).isEqualTo(0);
     }
 
-    @DisplayName("move() 호출 시 4 이상이면 position이 1 증가한다")
+    @DisplayName("move() 호출 시 position이 1 증가한다")
     @Test
     void moveCarWhenNumberIsFourOrMore() {
-        car.move(4);
+        car.move();
 
         assertThat(car.getPosition()).isEqualTo(1);
-    }
-
-    @DisplayName("move() 호출 시 3 이하이면 position이 변하지 않는다")
-    @Test
-    void stopCarWhenNumberIsThreeOrLess() {
-        car.move(3);
-
-        assertThat(car.getPosition()).isEqualTo(0);
     }
 }
