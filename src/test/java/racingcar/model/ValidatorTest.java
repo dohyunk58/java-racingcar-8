@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.List;
+
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
@@ -57,6 +59,15 @@ public class ValidatorTest {
     @Test
     void validateTryCountIsNotNaturalNumber() {
         assertThatThrownBy(() -> Validator.validateTryCount("-1"))
+                .isInstanceOf(IllegalArgumentException.class);
+    }
+
+    @DisplayName("이름을 중복 입력하면 예외가 발생한다")
+    @Test
+    void validateDuplicateName() {
+        List<String> duplicateNames = List.of("pobi", "woni", "pobi");
+
+        assertThatThrownBy(() -> Validator.validateDuplicateNames(duplicateNames))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }
